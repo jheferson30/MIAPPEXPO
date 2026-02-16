@@ -11,6 +11,12 @@ const SignaturePad = forwardRef((props, ref) => {
         signatureRef.current.readSignature();
       }
     },
+    clearSignature: () => {
+      if (signatureRef.current) {
+        signatureRef.current.clearSignature();
+      }
+      props.setSignature(null);
+    },
   }));
 
   return (
@@ -45,3 +51,4 @@ const styles = StyleSheet.create({
 });
 
 export default SignaturePad;
+SignaturePad.displayName = "SignaturePad";
